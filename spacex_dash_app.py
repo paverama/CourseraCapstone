@@ -1,6 +1,6 @@
 # Steps to setup development environment
-# pip3 install pandas dash
-# wget "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/datasets/spacex_launch_dash.csv"
+#pip3 install pandas dash
+#wget "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/datasets/spacex_launch_dash.csv"
 # following code is a modified version of this skeleton which you can download with
 # wget "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DS0321EN-SkillsNetwork/labs/module_3/spacex_dash_app.py"
 # python3 spacex_dash_app.py
@@ -10,11 +10,11 @@ import pandas as pd
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
-from dash.dependencies import Input, Outputpyht
+from dash.dependencies import Output , Input
 import plotly.express as px
 
 # Read the airline data into pandas dataframe
-spacex_df = pd.read_csv("spacex_launch_dash.csv")
+spacex_df = pd.read_csv("spacex_launch_geo.csv")
 max_payload = spacex_df['Payload Mass (kg)'].max()
 min_payload = spacex_df['Payload Mass (kg)'].min()
 
