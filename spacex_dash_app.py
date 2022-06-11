@@ -82,13 +82,15 @@ def get_pie_chart(entered_site):
         return fig
 
 
+
 # TASK 4:
 # Add a callback function for `site-dropdown` and `payload-slider` as inputs, `success-payload-scatter-chart` as output
 @app.callback(Output(component_id='success-payload-scatter-chart',component_property='figure'),
-                [Input(component_id='site-dropdown',component_property='value'),
-                Input(component_id='payload-slider',component_property='value')])
+                [Input(component_id='site-dropdown',component_property='value'),Input(component_id='payload-slider',component_property='value')]
+            )
 def scatter(entered_site,payload):
     filtered_df = spacex_df[spacex_df['Payload Mass (kg)'].between(payload[0],payload[1])]
+    print(filtered_df)
     # thought reusing filtered_df may cause issues, but tried it out of curiosity and it seems to be working fine
     
     if entered_site=='ALL':
